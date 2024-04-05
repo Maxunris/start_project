@@ -1,8 +1,8 @@
-
 from selene import browser, have
 import allure
 
-@allure.title("Switching to child mode")
+
+@allure.title("Switching to kids mode")
 def test_kids_mod():
     with allure.step('Open site'):
         browser.open('https://start.ru/')
@@ -11,4 +11,3 @@ def test_kids_mod():
         browser.element('[data-testid="profile_kids"]').click()
     with allure.step('Checking text'):
         browser.element('.VideoUnit_vline__header__title__link__title__Nuqlc').should(have.text('Новинки для детей'))
-

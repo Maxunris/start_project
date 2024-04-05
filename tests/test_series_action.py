@@ -1,9 +1,13 @@
-
+import allure
 from selene import browser, have
 
-def test_series_action():
-    browser.open('https://start.ru/')
-    browser.element('[data-testid="series_button"]').click()
-    browser.element('[href="/series/action"]').click()
-    browser.element('.Catalog_catalog__Gjv4a').should(have.text('Сериалы: боевики - смотреть онлайн'))
 
+@allure.title("Checking the desired category")
+def test_series_action():
+    with allure.step('Open site'):
+        browser.open('https://start.ru/')
+    with allure.step('Open the desired category'):
+        browser.element('[data-testid="series_button"]').click()
+        browser.element('[href="/series/action"]').click()
+    with allure.step('Checking the first series'):
+        browser.element('.Catalog_catalog__Gjv4a').should(have.text('Сериалы: боевики - смотреть онлайн'))
