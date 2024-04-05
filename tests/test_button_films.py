@@ -1,8 +1,13 @@
 
 from selene import browser, have
+import allure
 
+@allure.title("The films button clickable")
 def test_button_films():
-    browser.open('https://start.ru/')
-    browser.element('[data-testid="movies_button"]').click()
-    browser.element('.Catalog_catalog__Gjv4a').should(have.text('Фильмы - смотреть онлайн'))
+    with allure.step('Open site'):
+        browser.open('https://start.ru/')
+    with allure.step('Films button clickable'):
+        browser.element('[data-testid="movies_button"]').click()
+    with allure.step('Checking text'):
+        browser.element('.Catalog_catalog__Gjv4a').should(have.text('Фильмы - смотреть онлайн'))
 
