@@ -5,7 +5,7 @@ import allure
 @allure.title("Seatch film")
 def test_search_film():
     with allure.step('Open site'):
-        browser.open('https://start.ru/')
+        browser.open("")
 
     with allure.step('Enter the text in the search bar'):
         browser.element('.HeaderSearch_header-search__loupe__1SJbV').click()

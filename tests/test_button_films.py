@@ -5,7 +5,7 @@ import allure
 @allure.title("The films button clickable")
 def test_button_films():
     with allure.step('Open site'):
-        browser.open('https://start.ru/')
+        browser.open("")
     with allure.step('Films button clickable'):
         browser.element('[data-testid="movies_button"]').click()
     with allure.step('Checking text'):
