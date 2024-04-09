@@ -1,3 +1,5 @@
+import time
+
 from selene import browser, have
 import allure
 
@@ -10,4 +12,5 @@ def test_kids_mod():
         browser.element('.HeaderMenu_header-menu__wrapper___TgEa').click()
         browser.element('[data-testid="profile_kids"]').click()
     with allure.step('Checking text'):
+        time.sleep(5)
         browser.element('.VideoUnit_vline__header__title__link__title__Nuqlc').should(have.text('Новинки для детей'))
