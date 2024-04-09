@@ -8,6 +8,7 @@ import allure
 def test_kids_mod():
     with allure.step('Open site'):
         browser.open("")
+        time.sleep(3)
     with allure.step('Switching to child mode'):
         browser.element('.HeaderMenu_header-menu__wrapper___TgEa').click()
         browser.element('[data-testid="profile_kids"]').click()
