@@ -1,5 +1,6 @@
 import time
-from selene import browser, have
+
+from selene import browser, have, be
 import allure
 
 
@@ -12,6 +13,4 @@ def test_resetting_filter():
         browser.element('[data-testid="reset_filter_button"]').click()
 
     with allure.step('Checking the first series'):
-        time.sleep(3)
-        browser.driver.refresh()
         browser.element('#first-item').should(have.text('Престиж'))

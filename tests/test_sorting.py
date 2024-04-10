@@ -1,4 +1,3 @@
-import time
 import allure
 
 from selene import browser, have, command
@@ -15,6 +14,5 @@ def test_sorting():
         browser.element('[alt="sort"]').click()
         browser.all('.CatalogSelect_select__item__Ea2Dr').element_by(have.exact_text('По рейтингу')).click()
     with allure.step('Checking the first series'):
-        time.sleep(5)
         browser.driver.refresh()
         browser.element('#first-item').perform(command.js.scroll_into_view).should(have.text('Маша и Медведь'))
