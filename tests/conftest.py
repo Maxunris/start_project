@@ -1,19 +1,4 @@
-# import pytest
-# from selene import browser
-# from selenium import webdriver
-#
-#
-# @pytest.fixture(scope="function", autouse=True)
-# def browser_manage():
-#     driver_options = webdriver.ChromeOptions()
-#     driver_options.page_load_strategy = "eager"
-#     browser.config.driver_options = driver_options
-#     browser.config.base_url = 'https://tochka.com'
-#     browser.config.window_width = 1920
-#     browser.config.window_height = 1080
-#
-#     yield
-#     browser.quit()
+
 
 
 import os
@@ -41,12 +26,14 @@ def load_env():
 
 @pytest.fixture(scope='function', autouse=True)
 def setup_browser(request):
+    browser_version = request.config.getoption('--browser_version')
+    browser_version = browser_version if browser_version != "" else DEFAULT_BROWSER_VERSION
     options = Options()
     options.add_argument('--no-sandbox')
     options.add_argument('--disable-dev-shm-usage')
     selenoid_capabilities = {
         "browserName": "chrome",
-        "browserVersion": DEFAULT_BROWSER_VERSION,
+        "browserVersion": browser_version,
         "selenoid:options": {
             "enableVNC": True,
             "enableVideo": True
@@ -71,4 +58,24 @@ def setup_browser(request):
     attach.add_html(browser)
     attach.add_video(browser)
 
+    browser.quit()
+
+
+
+
+import pytest
+from selene import browser
+from selenium import webdriver
+
+
+@pytest.fixture(scope="function")
+def browser_manage():
+    driver_options = webdriver.ChromeOptions()
+    driver_options.page_load_strategy = "eager"
+    browser.config.driver_options = driver_options
+    browser.config.base_url = 'https://tochka.com'
+    browser.config.window_width = 1920
+    browser.config.window_height = 1080
+
+    yield
     browser.quit()
