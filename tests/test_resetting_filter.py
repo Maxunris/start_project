@@ -13,4 +13,4 @@ def test_resetting_filter():
         browser.element('[data-testid="reset_filter_button"]').click()
 
     with allure.step('Checking the first series'):
-        browser.element('#first-item').should(have.text('Престиж'))
+        browser.element('#first-item').should(be.visible).wait_until(have.text('Престиж'))
