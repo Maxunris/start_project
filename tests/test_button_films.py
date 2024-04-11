@@ -1,9 +1,9 @@
 import allure
-from pages.button_films_page import MainPage
+from pages.button_films_page import Films_page
 
 @allure.title("The films button clickable")
 def test_button_films():
-    main_page = MainPage()
-    main_page.open()
-    main_page.click_films_button()
-    main_page.check_films_text()
+    films_page = Films_page()
+    films_page.open()
+    films_page.click_films_button()
+    films_page.check_films_text()

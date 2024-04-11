@@ -1,7 +1,7 @@
 from selene import browser, have, be
 import allure
 
-class MainPage:
+class Films_page:
     def open(self):
         with allure.step('Open site'):
             browser.open("")

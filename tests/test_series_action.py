@@ -1,13 +1,11 @@
 import allure
-from selene import browser, have
+from pages.series_action_page import Series_action
 
 
 @allure.title("Checking the desired category")
 def test_series_action():
-    with allure.step('Open site'):
-        browser.open("")
-    with allure.step('Open the desired category'):
-        browser.element('[data-testid="series_button"]').click()
-        browser.element('[href="/series/action"]').click()
-    with allure.step('Checking the first series'):
-        browser.element('.Catalog_catalog__Gjv4a').should(have.text('Сериалы: боевики - смотреть онлайн'))
+    series_action = Series_action()
+    series_action.open()
+    series_action.open_category()
+    series_action.checking_text()
+
