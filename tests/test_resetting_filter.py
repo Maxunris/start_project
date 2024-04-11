@@ -1,14 +1,9 @@
-from selene import browser, have, be
 import allure
-
+from pages.resetting_filter_page import Filter_page
 
 @allure.title("The filter reset button is working")
 def test_resetting_filter():
-    with allure.step('Open site'):
-        browser.open('series/family')
-
-    with allure.step('Switching the filter'):
-        browser.element('[data-testid="reset_filter_button"]').click()
-
-    with allure.step('Checking the first series'):
-        browser.element('#first-item').should(be.visible).wait_until(have.text('Престиж'))
+    filter_page = Filter_page()
+    filter_page.open()
+    filter_page.switching_the_filter()
+    filter_page.Checking_text()

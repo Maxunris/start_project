@@ -1,12 +1,10 @@
-from selene import browser, have
 import allure
+from pages.registration_page import RegistrationPage
 
 
 @allure.title("Registration page")
-def test_button_films():
-    with allure.step('Open site'):
-        browser.open("")
-    with allure.step('Button try it for free'):
-        browser.element('[data-testid="try_free_button_text"]').click()
-    with allure.step('Checking text'):
-        browser.element('.Sign_sign__form-title__USFwT').should(have.text('Зарегистрируйтесь и смотрите START 7 дней бесплатно'))
+def test_button_for_free():
+    registration_page = RegistrationPage()
+    registration_page.open()
+    registration_page.click_for_free_button()
+    registration_page.check_registration_page()
