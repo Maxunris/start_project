@@ -1,12 +1,9 @@
-from selene import browser, have
 import allure
-
+from pages.button_films_page import MainPage
 
 @allure.title("The films button clickable")
 def test_button_films():
-    with allure.step('Open site'):
-        browser.open("")
-    with allure.step('Films button clickable'):
-        browser.element('[data-testid="movies_button"]').click()
-    with allure.step('Checking text'):
-        browser.element('.Catalog_catalog__Gjv4a').should(have.text('Фильмы - смотреть онлайн'))
+    main_page = MainPage()
+    main_page.open()
+    main_page.click_films_button()
+    main_page.check_films_text()
