@@ -1,5 +1,5 @@
 import allure
-from pages.sorting_page import Sorting
+from start_project.pages.sorting_page import Sorting
 
 
 @allure.title("Checking sorting button")

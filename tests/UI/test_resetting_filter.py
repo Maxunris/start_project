@@ -1,5 +1,6 @@
 import allure
-from pages.resetting_filter_page import Filter_page
+from start_project.pages.resetting_filter_page import Filter_page
+
 
 @allure.title("The filter reset button is working")
 def test_resetting_filter():

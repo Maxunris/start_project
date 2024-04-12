@@ -1,6 +1,5 @@
 import allure
-from pages.search_film_page import Search_film
-
+from start_project.pages.search_film_page import Search_film
 
 
 @allure.title("Seatch film")

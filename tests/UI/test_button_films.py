@@ -1,5 +1,6 @@
 import allure
-from pages.button_films_page import Films_page
+from start_project.pages.button_films_page import Films_page
+
 
 @allure.title("The films button clickable")
 def test_button_films():

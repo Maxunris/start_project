@@ -1,5 +1,5 @@
 import allure
-from pages.registration_page import RegistrationPage
+from start_project.pages.registration_page import RegistrationPage
 
 
 @allure.title("Registration page")
