@@ -15,3 +15,6 @@ class Filter_page():
     def Checking_text(self):
         with allure.step('Checking the first series'):
             browser.element('#first-item').should(be.visible).wait_until(have.text('Престиж'))
+
+
+filter_page = Filter_page()

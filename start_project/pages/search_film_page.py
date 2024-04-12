@@ -16,3 +16,6 @@ class Search_film():
     def checking_text(self):
         with allure.step('Checking the first film'):
             browser.element('.VideoUnit_title__J_lZy').should(have.text('Папины дочки'))
+
+
+search_film = Search_film()

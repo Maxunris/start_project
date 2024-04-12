@@ -1,10 +1,9 @@
 import allure
-from start_project.pages.sorting_page import Sorting
+from start_project.pages.sorting_page import sorting
 
 
 @allure.title("Checking sorting button")
 def test_sorting():
-    sorting = Sorting()
     sorting.open()
     sorting.open_category()
     sorting.open_desired_sorting()

@@ -15,3 +15,6 @@ class RegistrationPage:
         with allure.step('Checking text'):
             browser.element('.Sign_sign__form-title__USFwT').should(
                 have.text('Зарегистрируйтесь и смотрите START 7 дней бесплатно'))
+
+
+registration_page = RegistrationPage()

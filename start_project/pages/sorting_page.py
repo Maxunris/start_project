@@ -23,3 +23,6 @@ class Sorting():
         with allure.step('Checking the first series'):
             browser.driver.refresh()
             browser.element('#first-item').perform(command.js.scroll_into_view).should(have.text('Маша и Медведь'))
+
+
+sorting = Sorting()

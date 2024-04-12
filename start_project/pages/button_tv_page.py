@@ -14,3 +14,6 @@ class Tv_page:
     def check_tv_text(self):
         with allure.step('Checking text'):
             browser.element('.TvSchedule_container__VQpHm').should(have.text('ТВ Каналы Онлайн и Программа Передач'))
+
+
+tv_page = Tv_page()

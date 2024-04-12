@@ -14,3 +14,6 @@ class Films_page:
     def check_films_text(self):
         with allure.step('Checking text'):
             browser.element('.Catalog_catalog__Gjv4a').should(have.text('Фильмы - смотреть онлайн'))
+
+
+films_page = Films_page()

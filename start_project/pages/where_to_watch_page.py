@@ -11,3 +11,6 @@ class Where_to_watch:
         with allure.step('Checking text'):
             browser.all('.WaysToWatch_ways-to-watch__device-title__HdDMl').should(
                 have.texts('Телевизоры', 'Приставки', 'Мобильные устройства'))
+
+
+where_to_watch = Where_to_watch()

@@ -16,3 +16,6 @@ class Series_action():
     def checking_text(self):
         with allure.step('Checking the first series'):
             browser.element('.Catalog_catalog__Gjv4a').should(have.text('Сериалы: боевики - смотреть онлайн'))
+
+
+series_action = Series_action()
