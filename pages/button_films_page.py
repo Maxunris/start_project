@@ -1,4 +1,4 @@
-from selene import browser, have, be
+from selene import browser, have
 import allure
 
 class Films_page:
