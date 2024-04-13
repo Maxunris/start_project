@@ -20,7 +20,6 @@ def test_trailer_api():
 
     response = requests.get(url)
     # response = requests.get(base_api_url + endpoint, params=params)
-    print(response.text)
     with allure.step('Status code=200'):
         assert response.status_code == 200
     with allure.step('alias = masha-i-medved'):
