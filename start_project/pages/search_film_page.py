@@ -2,7 +2,7 @@ from selene import browser, have, command
 import allure
 
 
-class SearchFilm():
+class SearchFilm:
     @allure.title("Seatch film")
     def open(self):
         with allure.step('Open site'):

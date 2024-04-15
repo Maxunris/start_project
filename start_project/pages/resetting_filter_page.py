@@ -2,7 +2,7 @@ from selene import browser, have, be
 import allure
 
 
-class FilterPage():
+class FilterPage:
     @allure.title("The filter reset button is working")
     def open(self):
         with allure.step('Open site'):

@@ -2,7 +2,7 @@ import allure
 from selene import browser, have
 
 
-class SeriesAction():
+class SeriesAction:
     @allure.title("Checking the desired category")
     def open(self):
         with allure.step('Open site'):

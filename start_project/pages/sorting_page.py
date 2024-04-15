@@ -2,7 +2,7 @@ import allure
 from selene import browser, have, command
 
 
-class Sorting():
+class Sorting:
 
     @allure.title("Checking sorting button")
     def open(self):
