@@ -2,7 +2,7 @@ import allure
 import requests
 
 
-@allure.title("Switch Language in English")
+@allure.title("Checking switch Language in English")
 def test_trailer_api(base_api_url):
     endpoint = "/document/terms_of_use/en"
     params = {"apikey": "a20b12b279f744f2b3c7b5c5400c4eb5"}

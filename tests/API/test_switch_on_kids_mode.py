@@ -4,7 +4,7 @@ from jsonschema import validate
 from start_project.shemas.post import post
 
 
-@allure.title("Switch on kids mode")
+@allure.title("Checking switch on kids mode")
 def test_trailer_api(base_api_url):
     endpoint = "/profile/select"
     params = {"apikey": "a20b12b279f744f2b3c7b5c5400c4eb5"}

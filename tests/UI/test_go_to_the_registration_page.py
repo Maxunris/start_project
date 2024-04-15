@@ -2,7 +2,7 @@ import allure
 from start_project.pages.registration_page import registration_page
 
 
-@allure.title("Registration page")
+@allure.title("Checking registration page")
 def test_button_for_free():
     registration_page.open()
 

@@ -4,7 +4,7 @@ from jsonschema import validate
 from start_project.shemas.trailer_shemas import trailer
 
 
-@allure.title("Checking movie data")
+@allure.title("Checking trailer data")
 def test_trailer_api(base_api_url):
     endpoint = "/web/watch/vyzov"
     params = {"apikey": "a20b12b279f744f2b3c7b5c5400c4eb5",
