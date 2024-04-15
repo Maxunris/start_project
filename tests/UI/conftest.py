@@ -3,9 +3,12 @@ import pytest
 from dotenv import load_dotenv
 from selenium.webdriver.chrome.options import Options
 from start_project.utils import attach
+from selene import browser
+from selenium import webdriver
 
 DEFAULT_BROWSER_VERSION = "120.0"
 DEFAULT_BROWSER_NAME = "chrome"
+
 
 def pytest_addoption(parser):
     parser.addoption("--browser_version", default="120.0")
@@ -55,11 +58,6 @@ def setup_browser(request):
     attach.add_video(browser)
 
     browser.quit()
-
-
-import pytest
-from selene import browser
-from selenium import webdriver
 
 
 @pytest.fixture(scope="function")

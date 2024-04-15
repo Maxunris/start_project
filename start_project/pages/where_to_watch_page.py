@@ -2,7 +2,7 @@ from selene import browser, have, command
 import allure
 
 
-class Where_to_watch:
+class WhereToWatch:
     def open(self):
         with allure.step('Open site'):
             browser.open("ways-to-watch")
@@ -13,4 +13,4 @@ class Where_to_watch:
                 have.texts('Телевизоры', 'Приставки', 'Мобильные устройства'))
 
 
-where_to_watch = Where_to_watch()
+where_to_watch = WhereToWatch()

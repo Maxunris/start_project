@@ -2,7 +2,7 @@ from selene import browser, have
 import allure
 
 
-class Tv_page:
+class TvPage:
     def open(self):
         with allure.step('Open site'):
             browser.open("")
@@ -16,4 +16,4 @@ class Tv_page:
             browser.element('.TvSchedule_container__VQpHm').should(have.text('ТВ Каналы Онлайн и Программа Передач'))
 
 
-tv_page = Tv_page()
+tv_page = TvPage()

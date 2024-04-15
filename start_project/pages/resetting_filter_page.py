@@ -2,7 +2,7 @@ from selene import browser, have, be
 import allure
 
 
-class Filter_page():
+class FilterPage():
     @allure.title("The filter reset button is working")
     def open(self):
         with allure.step('Open site'):
@@ -17,4 +17,4 @@ class Filter_page():
             browser.element('#first-item').should(be.visible).wait_until(have.text('Престиж'))
 
 
-filter_page = Filter_page()
+filter_page = FilterPage()

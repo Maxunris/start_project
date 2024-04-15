@@ -2,7 +2,7 @@ from selene import browser, have, command
 import allure
 
 
-class Search_film():
+class SearchFilm():
     @allure.title("Seatch film")
     def open(self):
         with allure.step('Open site'):
@@ -18,4 +18,4 @@ class Search_film():
             browser.element('.VideoUnit_title__J_lZy').should(have.text('Папины дочки'))
 
 
-search_film = Search_film()
+search_film = SearchFilm()

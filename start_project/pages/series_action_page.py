@@ -2,7 +2,7 @@ import allure
 from selene import browser, have
 
 
-class Series_action():
+class SeriesAction():
     @allure.title("Checking the desired category")
     def open(self):
         with allure.step('Open site'):
@@ -18,4 +18,4 @@ class Series_action():
             browser.element('.Catalog_catalog__Gjv4a').should(have.text('Сериалы: боевики - смотреть онлайн'))
 
 
-series_action = Series_action()
+series_action = SeriesAction()

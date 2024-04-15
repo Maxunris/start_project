@@ -13,6 +13,7 @@ def test_trailer_api(base_api_url):
               }
 
     response = requests.get(base_api_url + endpoint, params=params)
+
     with allure.step('Status code=200'):
         assert response.status_code == 200
     with allure.step('title = Вызов'):
@@ -20,6 +21,6 @@ def test_trailer_api(base_api_url):
     with allure.step('description correct'):
         assert response.json()[
                    "description"] == "Член экипажа МКС получает травму в открытом космосе. Помочь ему может только срочная операция, но провести ее в невесомости — дело из области фантастики. Сложнейшую задачу предстоит выполнить торакальному хирургу Жене. И у нее всего месяц на подготовку, но помешать героине могут не только перегрузки и отсутствие притяжения…Чем же закончится уникальная миссия?"
-    with allure.step('Shema is validate'):
+    with allure.step('Schema is validate'):
         validate(response.json(), trailer)
 

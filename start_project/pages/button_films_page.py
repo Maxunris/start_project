@@ -2,7 +2,7 @@ from selene import browser, have
 import allure
 
 
-class Films_page:
+class FilmsPage:
     def open(self):
         with allure.step('Open site'):
             browser.open("")
@@ -16,4 +16,4 @@ class Films_page:
             browser.element('.Catalog_catalog__Gjv4a').should(have.text('Фильмы - смотреть онлайн'))
 
 
-films_page = Films_page()
+films_page = FilmsPage()

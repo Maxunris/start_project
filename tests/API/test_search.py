@@ -16,9 +16,10 @@ def test_trailer_api(base_api_url):
               }
 
     response = requests.get(base_api_url + endpoint, params=params)
+
     with allure.step('Status code=200'):
         assert response.status_code == 200
     with allure.step('alias = masha-i-medved'):
         assert response.json()["items"][0]["alias"] == "masha-i-medved"
-    with allure.step('Shema is validate'):
+    with allure.step('Schema is validate'):
         validate(response.json(), search)

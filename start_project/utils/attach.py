@@ -1,6 +1,40 @@
 import os
 import allure
 from allure_commons.types import AttachmentType
+from requests import Response
+import logging
+import json
+
+
+def response_logging(response: Response):
+    logging.info("Request: " + response.request.url)
+    if response.request.body:
+        logging.info("INFO Request body: " + response.request.body.decode('utf-8'))
+    logging.info("Request headers: " + str(response.request.headers))
+    logging.info("Response code " + str(response.status_code))
+    logging.info("Response: " + response.text)
+
+
+def response_attaching(response: Response):
+    allure.attach(
+        body=response.request.url,
+        name="Request url",
+        attachment_type=AttachmentType.TEXT,
+    )
+
+    if response.request.body:
+        allure.attach(
+            body=json.dumps(response.request.body.decode('utf-8'), indent=4, ensure_ascii=True),
+            name="Request body",
+            attachment_type=AttachmentType.JSON,
+            extension="json",
+        )
+        allure.attach(
+            body=json.dumps(response.json(), indent=4, ensure_ascii=True),
+            name="Response",
+            attachment_type=AttachmentType.JSON,
+            extension="json",
+        )
 
 
 def add_screenshot(browser):
@@ -12,7 +46,6 @@ def add_logs(browser):
     if browser.driver.capabilities['browserName'] == 'chrome':
         log = "".join(f'{text}\n' for text in browser.driver.get_log(log_type='browser'))
         allure.attach(log, 'browser_logs', AttachmentType.TEXT, '.log')
-
 
 
 def add_html(browser):
