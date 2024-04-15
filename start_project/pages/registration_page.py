@@ -1,4 +1,4 @@
-from selene import browser, have
+from selene import browser, have, command
 import allure
 
 
@@ -9,7 +9,7 @@ class RegistrationPage:
 
     def click_for_free_button(self):
         with allure.step('Button try it for free'):
-            browser.element('[data-testid="try_free_button_text"]').click()
+            browser.element('[data-testid="try_free_button_text"]').perform(command.js.click)
 
     def check_registration_page(self):
         with allure.step('Checking text'):

@@ -1,4 +1,4 @@
-from selene import browser, have
+from selene import browser, have, command
 import allure
 
 
@@ -10,7 +10,7 @@ class Search_film():
 
     def enter_text(self):
         with allure.step('Enter the text in the search bar'):
-            browser.element('.HeaderSearch_header-search__loupe__1SJbV').click()
+            browser.element('.HeaderSearch_header-search__loupe__1SJbV').perform(command.js.click)
             browser.element('.HeaderSearch_header-search__input-text__F3SjJ').type("Папины дочки").press_enter()
 
     def checking_text(self):

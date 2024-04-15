@@ -626,7 +626,7 @@ trailer = {
       "type": "boolean"
     },
     "playback_options": {
-      "type": "string"
+      "type": ["string", "null"]
     },
     "producers": {
       "type": "array",
