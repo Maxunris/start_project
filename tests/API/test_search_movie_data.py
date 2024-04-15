@@ -1,7 +1,8 @@
 import allure
-import requests
 from jsonschema import validate
 from start_project.shemas.search_shema import search
+from start_project.utils.api_helper import api_request
+
 
 
 @allure.title("Checking movie data")
@@ -15,7 +16,7 @@ def test_trailer_api(base_api_url):
 
               }
 
-    response = requests.get(base_api_url + endpoint, params=params)
+    response = api_request(base_api_url, endpoint, "GET", params=params)
 
     with allure.step('Status code=200'):
         assert response.status_code == 200

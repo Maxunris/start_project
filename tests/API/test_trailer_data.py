@@ -1,5 +1,5 @@
 import allure
-import requests
+from start_project.utils.api_helper import api_request
 from jsonschema import validate
 from start_project.shemas.trailer_shemas import trailer
 
@@ -12,7 +12,7 @@ def test_trailer_api(base_api_url):
               "content_lang": "ru"
               }
 
-    response = requests.get(base_api_url + endpoint, params=params)
+    response = api_request(base_api_url, endpoint, "GET", params=params)
 
     with allure.step('Status code=200'):
         assert response.status_code == 200
