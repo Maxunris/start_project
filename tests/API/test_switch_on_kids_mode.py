@@ -15,7 +15,10 @@ def test_trailer_api(base_api_url):
     headers = {
         'content-type': 'application/json',
         'Cookie': 'auth=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9'
-                  '.eyJ1aWQiOiI2NjE0NGEzY2JiOTliZDNlZjNkMjYwZjUiLCJwaWQiOiI1OTM4Njc2My1hN2FiLTQ4YzUtOWIzYy03YjhmOTI3MjA2NTAiLCJkaWQiOiIwZjcyMGVhNC03NDQwLTQxOGMtOTg2Mi1hYWY0MDIzNTY4YWUiLCJhbm9ueW1vdXMiOmZhbHNlLCJmb3Jfa2lkcyI6ZmFsc2UsImFjY291bnRfdHlwZSI6InJlZ2lzdGVyZWQiLCJhY2xfZXhwaXJlIjpudWxsLCJ1cGRhdGVkX2F0IjoxNzEyOTk1MTcwLCJ2IjozfQ.sIZfIJhvyQmVRvpT_xTievBH9VUIBJT5RY6ezVGr6uU'
+                  '.eyJ1aWQiOiI2NjE0NGEzY2JiOTliZDNlZjNkMjYwZjUiLCJwaWQiOiI1OTM4Njc2My1hN2FiLTQ4YzUtOWIzYy03YjhmOTI3M'
+                  'jA2NTAiLCJkaWQiOiIwZjcyMGVhNC03NDQwLTQxOGMtOTg2Mi1hYWY0MDIzNTY4YWUiLCJhbm9ueW1vdXMiOmZhbHNlLCJmb3J'
+                  'fa2lkcyI6ZmFsc2UsImFjY291bnRfdHlwZSI6InJlZ2lzdGVyZWQiLCJhY2xfZXhwaXJlIjpudWxsLCJ1cGRhdGVkX2F0IjoxN'
+                  'zEyOTk1MTcwLCJ2IjozfQ.sIZfIJhvyQmVRvpT_xTievBH9VUIBJT5RY6ezVGr6uU'
     }
     response = requests.post(base_api_url + endpoint, params=params, json=payload, headers=headers)
 
