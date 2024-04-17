@@ -24,3 +24,4 @@ def test_trailer_api(base_api_url):
         assert response.json()["items"][0]["alias"] == "masha-i-medved"
     with allure.step('Schema is validate'):
         validate(response.json(), search)
+
