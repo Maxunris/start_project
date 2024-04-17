@@ -1,5 +1,4 @@
 import allure
-import requests
 from jsonschema import validate
 from start_project.shemas.post import post
 from start_project.utils.api_helper import api_request
@@ -21,7 +20,6 @@ def test_trailer_api(base_api_url):
                   'fa2lkcyI6ZmFsc2UsImFjY291bnRfdHlwZSI6InJlZ2lzdGVyZWQiLCJhY2xfZXhwaXJlIjpudWxsLCJ1cGRhdGVkX2F0IjoxN'
                   'zEyOTk1MTcwLCJ2IjozfQ.sIZfIJhvyQmVRvpT_xTievBH9VUIBJT5RY6ezVGr6uU'
     }
-    # response = requests.post(base_api_url + endpoint, params=params, json=payload, headers=headers)
     response = api_request(base_api_url, endpoint, "POST", params=params, json=payload,headers=headers)
 
     with allure.step('Status code=200'):
